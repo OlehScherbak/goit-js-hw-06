@@ -1,0 +1,27 @@
+/* logo component */ 
+
+.logo {
+    font-family: $font-logo;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.03em;
+    
+    &__span {
+        color: $color-axcent;
+    }
+    
+    @media screen and (max-width: calc($desktop - 1px)) {
+    font-size: 24px;
+    }
+}
+
+.header__logo {
+    @include logo-secondary-color($text-black);
+    display: inline-block;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.footer__logo {
+    @include logo-secondary-color($text-white);
+}

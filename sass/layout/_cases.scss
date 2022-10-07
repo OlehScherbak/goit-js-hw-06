@@ -1,0 +1,95 @@
+/* 
+    cases
+    block
+*/
+
+.case {
+  &__link {
+    display: block;
+    transition-property: box-shadow;
+    transition-duration: $trans-duration;
+    transition-timing-function: $timing-function;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    padding-top: 20px;
+    padding-left: 24px;
+    margin-bottom: 4px;
+  }
+
+  &__category {
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    color: $text-grey;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    margin-bottom: 0;
+  }
+
+  &__thumb {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__description {
+    background-color: rgba(33, 150, 243, 0.9);
+    position: absolute;
+    transition: transform $trans-duration $timing-function;
+  }
+
+  &__description-text {
+    font-size: 18px;
+    line-height: 1.55;
+    color: $text-white;
+    letter-spacing: 0.03em;
+    padding: 63px 24px;
+    margin-bottom: 0;
+  }
+
+  &__link:hover &__description,
+  &__link:focus &__description {
+    transform: translatey(-100%);
+  }
+}
+
+/* 
+cases-grid
+block
+*/
+
+.cases-grid {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(-0.5 * $columns-gap);
+  }
+}
+
+.cases-grid__item {
+  @media screen and (min-width: $tablet) {
+    @include grid-column-width($tablet-columns-quontity, $columns-gap);
+    margin: calc($columns-gap / 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include grid-column-width($desktop-columns-quontity-cases, $columns-gap);
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: calc($tablet - 1px)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  border: 1px solid #eeeeee;
+}

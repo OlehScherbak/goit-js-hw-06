@@ -1,0 +1,15 @@
+@mixin logo-secondary-color($span-text-color) {
+    color: $span-text-color;
+}
+
+@mixin social_icon_inactive($fill-color) {
+    fill: $fill-color;
+}
+
+@mixin social_link_inactive_bgc($bgc-color) {
+    background-color: $bgc-color;
+}
+
+@mixin grid-column-width ($columns-quontity, $col-gap) {
+    width: calc((100% - $columns-quontity * $col-gap) / $columns-quontity);
+}
