@@ -22,10 +22,14 @@ function createBoxes() {
 }
 
 function destroyBoxes() {
-  const allBoxes = document.querySelectorAll('.box');
-  if (allBoxes) {
-    for (const box of allBoxes) {
-      box.remove();
-    }
-  }
+  parentDiv.innerHTML = '';
+
+  // alternative
+  // const allBoxes = document.querySelectorAll('.box');
+  // if (allBoxes) {
+  //   for (const box of allBoxes) {
+  //     box.remove();
+  //   }
+  // }
+
 }
